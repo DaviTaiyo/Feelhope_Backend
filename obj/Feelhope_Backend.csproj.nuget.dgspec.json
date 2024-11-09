@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Feelhope_Backend\\Feelhope_Backend.csproj": {}
+    "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Feelhope_Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Feelhope_Backend\\Feelhope_Backend.csproj": {
+    "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Feelhope_Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Feelhope_Backend\\Feelhope_Backend.csproj",
+        "projectUniqueName": "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Feelhope_Backend.csproj",
         "projectName": "Feelhope_Backend",
-        "projectPath": "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Feelhope_Backend\\Feelhope_Backend.csproj",
+        "projectPath": "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Feelhope_Backend.csproj",
         "packagesPath": "C:\\Users\\davie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Feelhope_Backend\\obj\\",
+        "outputPath": "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\davie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -46,9 +50,49 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.13.0, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
             "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
