@@ -23,6 +23,21 @@ namespace Feelhope_Backend.Controllers
             return await _context.Relatorios.ToListAsync();
         }
 
+        [HttpGet("usuario/{usuarioId}")]
+        public async Task<ActionResult<IEnumerable<Relatorio>>> GetRelatoriosByUsuarioId(int usuarioId)
+        {
+            var relatorios = await _context.Relatorios
+                                            .Where(r => r.UsuarioId == usuarioId)
+                                            .ToListAsync();
+
+            if (!relatorios.Any())
+            {
+                return Ok(new List<Relatorio>());
+            }
+
+            return relatorios;
+        }
+
         // GET: api/Relatorio/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Relatorio>> GetRelatorio(int id)
@@ -39,11 +54,59 @@ namespace Feelhope_Backend.Controllers
         [HttpPost]
         public async Task<ActionResult<Relatorio>> PostRelatorio(Relatorio relatorio)
         {
+            // Verifica se o sentimento já existe na tabela Sentimento, com base no título do sentimento
+            var sentimentoExistente = await _context.Sentimentos
+                                                    .FirstOrDefaultAsync(s => s.Titulo.ToLower() == relatorio.Sentimentos.ToLower());
+
+            if (sentimentoExistente != null)
+            {
+                // Se o sentimento já existe, atualiza o nível dele na tabela Sentimento
+                sentimentoExistente.Nivel += relatorio.Nivel ?? 0;
+
+                // Define o ID do sentimento existente no relatório
+                relatorio.SentimentosId = sentimentoExistente.Id;
+
+                // Atribui o ID do usuário ao sentimento se ainda não estiver definido
+                if (sentimentoExistente.UsuarioId == null)
+                {
+                    sentimentoExistente.UsuarioId = relatorio.UsuarioId;
+                }
+
+                // Atualiza o sentimento no banco de dados
+                _context.Entry(sentimentoExistente).State = EntityState.Modified;
+            }
+            else
+            {
+                // Se o sentimento não existe, cria um novo
+                var novoSentimento = new Sentimento
+                {
+                    Titulo = relatorio.Sentimentos,
+                    Nivel = 0, // Inicializa o novo sentimento com nível 0
+                    Descricao = "", // Deixa a descrição vazia conforme solicitado
+                    UsuarioId = relatorio.UsuarioId // Define o ID do usuário no novo sentimento
+                };
+
+                // Adiciona o novo sentimento ao contexto e salva para gerar o ID
+                _context.Sentimentos.Add(novoSentimento);
+                await _context.SaveChangesAsync();
+
+                // Define o ID do novo sentimento no relatório
+                relatorio.SentimentosId = novoSentimento.Id;
+                relatorio.Sentimento = novoSentimento; // Associa o novo sentimento ao relatório
+            }
+
+            // Adiciona o relatório à tabela Relatorios e salva
             _context.Relatorios.Add(relatorio);
             await _context.SaveChangesAsync();
 
+            // Inclui o objeto `Sentimento` associado no retorno para manter o formato de resposta desejado
+            relatorio.Sentimento = await _context.Sentimentos
+                                                .Where(s => s.Id == relatorio.SentimentosId)
+                                                .FirstOrDefaultAsync();
+
             return CreatedAtAction(nameof(GetRelatorio), new { id = relatorio.Id }, relatorio);
         }
+
 
         // PUT: api/Relatorio/{id}
         [HttpPut("{id}")]

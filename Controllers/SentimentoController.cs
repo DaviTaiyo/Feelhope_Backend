@@ -80,6 +80,22 @@ namespace Feelhope_Backend.Controllers
             return NoContent();
         }
 
+        [HttpGet("usuario/{usuarioId}")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<Sentimento>>> GetSentimentosByUsuarioId(int usuarioId)
+        {
+            var sentimentos = await _context.Sentimentos
+                .Where(s => s.UsuarioId == usuarioId)
+                .ToListAsync();
+
+            if (sentimentos == null || sentimentos.Count == 0)
+            {
+                return NotFound("Nenhum sentimento encontrado para este usuário.");
+            }
+
+            return Ok(sentimentos);
+        }
+
         // DELETE: api/Sentimento/{id}
         [HttpDelete("{id}")]
         [Authorize]

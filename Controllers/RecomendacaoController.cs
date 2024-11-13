@@ -74,6 +74,22 @@ namespace Feelhope_Backend.Controllers
 
             return NoContent();
         }
+        // GET: api/Recomendacao/usuario/{usuarioId}
+        [HttpGet("usuario/{usuarioId}")]
+        public async Task<ActionResult<IEnumerable<Recomendacao>>> GetRecomendacoesByUsuarioId(int usuarioId)
+        {
+            var recomendacoes = await _context.Recomendacoes
+                                              .Where(r => r.UsuarioId == usuarioId)
+                                              .ToListAsync();
+
+            if (!recomendacoes.Any())
+            {
+                return NotFound("Nenhuma recomendação encontrada para este usuário.");
+            }
+
+            return recomendacoes;
+        }
+
 
         // DELETE: api/Recomendacao/{id}
         [HttpDelete("{id}")]

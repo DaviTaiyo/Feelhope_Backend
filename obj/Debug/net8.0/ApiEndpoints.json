@@ -109,6 +109,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Feelhope_Backend.Controllers.RecomendacaoController",
+    "Method": "GetRecomendacoesByUsuarioId",
+    "RelativePath": "api/Recomendacao/usuario/{usuarioId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Feelhope_Backend.Models.Recomendacao, Feelhope_Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Feelhope_Backend.Controllers.RelatorioController",
     "Method": "GetRelatorios",
     "RelativePath": "api/Relatorio",
@@ -216,6 +242,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Feelhope_Backend.Controllers.RelatorioController",
+    "Method": "GetRelatoriosByUsuarioId",
+    "RelativePath": "api/Relatorio/usuario/{usuarioId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Feelhope_Backend.Models.Relatorio, Feelhope_Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Feelhope_Backend.Controllers.SentimentoController",
@@ -327,6 +379,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Feelhope_Backend.Controllers.SentimentoController",
+    "Method": "GetSentimentosByUsuarioId",
+    "RelativePath": "api/Sentimento/usuario/{usuarioId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Feelhope_Backend.Models.Sentimento, Feelhope_Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "UsuarioController",
     "Method": "AtualizarSenha",
     "RelativePath": "api/Usuario/atualizar-senha/{id}",
@@ -435,5 +513,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsuarioController",
+    "Method": "GetRelatoriosByUsuarioId",
+    "RelativePath": "api/Usuario/usuario/{usuarioId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Feelhope_Backend.Models.Relatorio, Feelhope_Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
