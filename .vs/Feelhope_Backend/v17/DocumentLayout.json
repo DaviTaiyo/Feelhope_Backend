@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{2B7EE3D7-1CD8-4CE8-AB10-EA73DC063925}|Feelhope_Backend.csproj|c:\\users\\davie\\source\\repos\\feelhope_backend\\controllers\\relatoriocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B7EE3D7-1CD8-4CE8-AB10-EA73DC063925}|Feelhope_Backend.csproj|solutionrelative:controllers\\relatoriocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B7EE3D7-1CD8-4CE8-AB10-EA73DC063925}|Feelhope_Backend.csproj|c:\\users\\davie\\source\\repos\\feelhope_backend\\models\\sentimento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B7EE3D7-1CD8-4CE8-AB10-EA73DC063925}|Feelhope_Backend.csproj|solutionrelative:models\\sentimento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B7EE3D7-1CD8-4CE8-AB10-EA73DC063925}|Feelhope_Backend.csproj|c:\\users\\davie\\source\\repos\\feelhope_backend\\controllers\\recomendacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B7EE3D7-1CD8-4CE8-AB10-EA73DC063925}|Feelhope_Backend.csproj|solutionrelative:controllers\\recomendacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Sentimento.cs",
+              "DocumentMoniker": "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Models\\Sentimento.cs",
+              "RelativeDocumentMoniker": "Models\\Sentimento.cs",
+              "ToolTip": "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Models\\Sentimento.cs",
+              "RelativeToolTip": "Models\\Sentimento.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwA4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T01:39:24.698Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +45,22 @@
               "RelativeDocumentMoniker": "Controllers\\RelatorioController.cs",
               "ToolTip": "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Controllers\\RelatorioController.cs",
               "RelativeToolTip": "Controllers\\RelatorioController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAIBBwCUAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAAA0wG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T06:13:25.153Z",
+              "WhenOpened": "2024-11-27T22:46:52.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RecomendacaoController.cs",
+              "DocumentMoniker": "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Controllers\\RecomendacaoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RecomendacaoController.cs",
+              "ToolTip": "C:\\Users\\davie\\source\\repos\\Feelhope_Backend\\Controllers\\RecomendacaoController.cs",
+              "RelativeToolTip": "Controllers\\RecomendacaoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T22:46:58.09Z",
               "EditorCaption": ""
             }
           ]

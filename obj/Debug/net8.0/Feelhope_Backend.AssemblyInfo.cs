@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Feelhope_Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78dadd4731bd29a6365caa716ea061e6d7b03374")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efe214803e68a11223e125b9e4246b19e1be3527")]
 [assembly: System.Reflection.AssemblyProductAttribute("Feelhope_Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Feelhope_Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

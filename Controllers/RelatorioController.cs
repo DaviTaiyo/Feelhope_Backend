@@ -51,6 +51,7 @@ namespace Feelhope_Backend.Controllers
         }
 
         // POST: api/Relatorio
+        // POST: api/Relatorio
         [HttpPost]
         public async Task<ActionResult<Relatorio>> PostRelatorio(Relatorio relatorio)
         {
@@ -60,8 +61,9 @@ namespace Feelhope_Backend.Controllers
 
             if (sentimentoExistente != null)
             {
-                // Se o sentimento já existe, atualiza o nível dele na tabela Sentimento
-                sentimentoExistente.Nivel += relatorio.Nivel ?? 0;
+                // Se o sentimento já existe, atualiza o nível e o número dele na tabela Sentimento
+                sentimentoExistente.Nivel += relatorio.Nivel ?? 0; // Atualiza o nível
+                sentimentoExistente.Numero = (sentimentoExistente.Numero ?? 0) + (relatorio.Nivel ?? 0); // Atualiza o número
 
                 // Define o ID do sentimento existente no relatório
                 relatorio.SentimentosId = sentimentoExistente.Id;
@@ -72,7 +74,7 @@ namespace Feelhope_Backend.Controllers
                     sentimentoExistente.UsuarioId = relatorio.UsuarioId;
                 }
 
-                // Atualiza o sentimento no banco de dados
+                // Marca o sentimento como modificado no banco de dados
                 _context.Entry(sentimentoExistente).State = EntityState.Modified;
             }
             else
@@ -81,7 +83,8 @@ namespace Feelhope_Backend.Controllers
                 var novoSentimento = new Sentimento
                 {
                     Titulo = relatorio.Sentimentos,
-                    Nivel = 0, // Inicializa o novo sentimento com nível 0
+                    Nivel = relatorio.Nivel ?? 0, // Define o nível com o valor do relatório
+                    Numero = relatorio.Nivel ?? 0, // Define o número inicial igual ao nível
                     Descricao = "", // Deixa a descrição vazia conforme solicitado
                     UsuarioId = relatorio.UsuarioId // Define o ID do usuário no novo sentimento
                 };
@@ -106,6 +109,7 @@ namespace Feelhope_Backend.Controllers
 
             return CreatedAtAction(nameof(GetRelatorio), new { id = relatorio.Id }, relatorio);
         }
+
 
 
         // PUT: api/Relatorio/{id}
